@@ -1,16 +1,51 @@
-# anglers_note
+# Anglers Note
 
-A new Flutter project.
+A fishing log app built with Flutter. Track fishing trips, record catches (species, size, etc.), and manage your tackle, all in one place.
 
-## Getting Started
+[日本語版 README](README.ja.md)
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Fishing trip logs (date, location, notes — list and detail views)
+- Catch records tied to each trip (species, size, photos)
+- Tackle management (register and edit gear)
+- Home dashboard showing trip count, catch count, and species ranking
+- Location and weather lookup for each trip
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tech Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter / Dart
+- State management: Riverpod (`flutter_riverpod` / `riverpod_annotation`)
+- Routing: `go_router`
+- Local database: `drift` (SQLite)
+- Location: `geolocator`
+- Image picking: `image_picker`
+
+## Project Structure
+
+```
+lib/src/
+  core/        # database, services, shared widgets
+  features/
+    fishing_log/  # trip and catch records
+    tackle/        # tackle management
+    settings/      # settings
+  routing/     # navigation/routes
+```
+
+## Setup & Run
+
+```bash
+flutter pub get
+flutter run
+```
+
+If code generation is needed (drift/freezed/riverpod_annotation `.g.dart` files):
+
+```bash
+dart run build_runner build --delete-conflicting-outputs
+```
+
+## Supported Platforms
+
+iOS / Android / macOS / Web / Linux / Windows (standard Flutter multi-platform setup)

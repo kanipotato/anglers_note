@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.kazu.app.anglers_note"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "26.3.11579264" // ローカルに既存。flutter.ndkVersion (28.2.x) は不安定なネットワークでZIPが壊れて取得できなかった
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
